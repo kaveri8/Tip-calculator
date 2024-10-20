@@ -1,0 +1,168 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+   <style>
+    body {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background-color: black;
+    }
+     .calculator {
+      width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 5px solid blue;
+      border-radius: 20px;
+     } 
+       input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      text-align: right;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }  
+    button {
+      width: 66px;
+      height: 56px;
+      margin: 2px;
+      font-size: 18px;
+      color: red;
+     }
+     .row {
+      text-align: center;
+    }  
+  </style> 
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" ><br>
+    
+      <button onclick="clearScreen()">C</button>
+      <button  onclick="appendValue('9')">9</button>
+      <button  onclick="appendValue('8')">8</button>
+      <button  onclick="appendValue('7')">7</button>
+      <button  onclick="appendValue('6')">6</button>
+      <button  onclick="appendValue('5')">5</button>
+      <button  onclick="appendValue('4')">4</button>
+      <button  onclick="appendValue('3')">3</button>
+      <button  onclick="appendValue('2')">2</button>
+      <button  onclick="appendValue('1')">1</button>
+      <button  onclick="appendValue('0')">0</button>
+      <button  onclick="appendValue('+')">+</button>
+      <button  onclick="appendValue('-')">-</button>
+      <button onclick="appendValue('*')">*</button>
+      <button  onclick="appendValue('/')">/</button>
+      <button onclick="calculate()">=</button>
+    </div>
+    
+      
+ <script>
+    function appendValue(value) {
+      document.getElementById("result").value += value;
+    }
+
+    function clearScreen() {
+      document.getElementById("result").value = " ";
+    }
+
+
+    function calculate() {
+        try{
+            let result = eval(document.getElementById("result").value);
+            document.getElementById("result").value=result;
+        }
+        catch(e){
+            alert("invalid calculation");
+        }
+      
+    }
+  </script>
+</body>
+ </html> -->
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            /* background-image:url(https://img.freepik.com/premium-photo/abstract-background-images-wallpaper-ai-generated_643360-43333.jpg); */
+            /* background-repeat: no-repeat; */
+            background-size: 100vw 100vh;
+        }
+        .container{
+            /* align-items: center; */
+            /* padding:3rem; */
+            border:1px solid black;
+            /* margin:15%; */
+            /* width:50%;
+            height: 50%; */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #000;
+            text-align: center;
+            width: 20%;
+            height: 30%;
+            display: grid;
+            grid-gap: 6px;
+            margin-left: 40%;
+            margin-top: 3%;
+            /* backdrop-filter: blur(5px); */
+            background-color: aliceblue;
+            
+        }
+        #amt{
+            padding:6px;
+        }
+        #perc{
+            padding:6px;
+        }
+        #calculatetip{
+            padding: 4px;
+            background-color: green;
+            font-weight: bolder;
+            font-size: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-size:300%;margin-top: 10%; font-style: italic; color: rgba(19, 1, 1, 0.74);">_Tip Calculator_</h1>
+    <div class="container">
+        <label for="billamount">Bill Amount: </label>
+        <input type="number" id="amt" placeholder="enter amount"><br><br>
+        <label for="tippercentage">Tip Percentage:</label>
+        <input type="number" id="perc" placeholder="enter tip percentage"><br><br>
+        <button onclick="tipcal()" id="calculatetip">Caculate Tip</button><br><br>
+        <label for="tipamount">Tip Amount:</label>
+        <label for="" id="amount"></label><br><br>
+        <label for="totalamount">Total Bill:</label>
+        <label for="" id="bill"></label><br>
+
+
+    </div>
+    <script>
+         function tipcal(){
+    let billamt=document.getElementById("amt").value;
+    let tipamt=document.getElementById("perc").value;
+     
+    let tip=(billamt*tipamt)/100;
+    let total=Number(billamt)+tip;
+    document.getElementById("amount").innerHTML=tip;
+    document.getElementById("bill").innerHTML=total;
+
+}
+
+    </script>
+</body>
+</html>
+
+
+
